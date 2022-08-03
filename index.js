@@ -329,3 +329,14 @@ let g = setInterval(()=>{
 let h = setTimeout(()=>{
     clearInterval(g)
 },10000)
+
+//chunk the array
+
+let array2 = [1, 5, 15, 3, 6, 58, 7, 9, 11,20];
+let chunk = 3;
+let output = [];
+
+for(let i = 0;i<array2.length;i+chunk){
+output.push(array2.splice(i,i+chunk));
+}
+console.log(output);
