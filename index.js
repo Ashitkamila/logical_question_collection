@@ -340,3 +340,17 @@ for(let i = 0;i<array2.length;i+chunk){
 output.push(array2.splice(i,i+chunk));
 }
 console.log(output);
+//counting boomerangs
+
+const array = [1,7,1,7,7,1,7,1,7]
+let count = 0;
+
+function countingBoomerangs(a){
+  for(let i =0;i<a.length;i++){
+   if(a[i] !== a[i+1] && a[i] === a[i+2]){
+     count++;
+   }
+  }
+  return count
+}
+console.log(countingBoomerangs(array));
