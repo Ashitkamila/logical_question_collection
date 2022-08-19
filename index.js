@@ -389,3 +389,25 @@ let findPermutations = (string) => {
   return permutationsArray
 }
 console.log(findPermutations('abc'));
+
+//valid parenthesis
+
+let findBalancedBracket = (bracket)=>{
+   let stack = [];
+   for(let char of bracket){
+    if(char === '('){
+    stack.push(char)
+    }else{
+    let lastChar = stack.pop();
+    if(lastChar!=='('){
+    return false
+    }
+    }
+   }
+   if(stack.length !==0){
+   return false
+   }
+   return true
+}
+console.log(findBalancedBracket('()'));
+console.log(findBalancedBracket('())'));
