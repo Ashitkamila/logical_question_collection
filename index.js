@@ -477,3 +477,22 @@ instead of the number and for the multiples of five print “Buzz”. For number
       str = (i % 5 === 0 && i % 3 === 0) ? "FizzBuzz" : (i % 3 === 0 ? "Fizz" : (i % 5 === 0) ? "Buzz" : i);
       console.log(str);
     }
+//convert 12hours time to 24hours 
+
+const convertTime12to24 = (a) => {
+  const [time, newTime] = a.split(' ');
+
+  let [hours, minutes] = time.split(':');
+
+  if (hours === '12') {
+    hours = '00';
+  }
+
+  if (newTime === 'PM') {
+    hours = parseInt(hours, 10) + 12;
+  }
+
+  return `${hours}:${minutes}`;
+}
+
+console.log(convertTime12to24('01:02 PM'));
