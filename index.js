@@ -411,3 +411,69 @@ let findBalancedBracket = (bracket)=>{
 }
 console.log(findBalancedBracket('()'));
 console.log(findBalancedBracket('())'));
+//substring pallindrom in a string
+
+let a = 'madam';
+        const checkPalindram=(d)=>{
+            let dataInArray=d.split('');
+            let finalData='';
+
+            for(let i=dataInArray.length-1;i>=0;i--){
+                finalData+=dataInArray[i]
+            }
+
+            if(d===finalData){
+                console.log(d);
+            }
+        }
+        const allPalindram=(d)=>{
+            for(let i=0;i<d.length;i++){
+                for(let j=i+2;j<d.length+1;j++){
+                    let temp=d.substring(i,j)
+                   checkPalindram(temp)
+                }
+            }
+        }
+       allPalindram(a)
+
+//find vowel in string 
+(using regex)
+
+ let findVowel=(a)=>{
+ return a.match(/[aeuio]/gi) ? a.match(/[aeuio]/gi).length : 0
+ } 
+console.log(findVowel('ashit kumar'));
+
+//second method
+let vowelCount = (a)=>{
+  let count = 0;
+  let vowel = ['a','e','i','o','u'];
+  for(let char of a){
+  if(vowel.includes(char.toLowerCase())){
+   count++
+  }
+  }
+  return count
+ }
+ console.log(vowelCount('Hello World'));
+
+//first letter capital in a sentence
+
+let output1 = [];
+let firstCap=(n)=>{
+ let splitCharcter = n.split(' ');
+ for(let alph of splitCharcter){
+ output1.push(alph[0].toUpperCase() + alph.slice(1) );
+ }
+ return output1.join(' ')
+}
+console.log(firstCap('hello world'));
+
+/*Write a program that prints the numbers from 1 to 100. But for multiples of three print “Fizz” 
+instead of the number and for the multiples of five print “Buzz”. For numbers which are multiples of both three and five print “FizzBuzz”*/
+
+
+  for (let i = 0; i <= 100; i++) {
+      str = (i % 5 === 0 && i % 3 === 0) ? "FizzBuzz" : (i % 3 === 0 ? "Fizz" : (i % 5 === 0) ? "Buzz" : i);
+      console.log(str);
+    }
