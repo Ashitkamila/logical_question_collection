@@ -496,3 +496,25 @@ const convertTime12to24 = (a) => {
 }
 
 console.log(convertTime12to24('01:02 PM'));
+
+//counting group
+const people = [
+    {name: 'John', group: 'A'}, 
+    {name: 'Andrew', group: 'C'}, 
+    {name: 'Peter', group: 'A'}, 
+    {name: 'James', group: 'B'}, 
+    {name: 'Hanna', group: 'A'}, 
+    {name: 'Adam', group: 'B'}];
+
+const groupInfo = people.reduce((groups, person) => {
+    const {A = 0, B = 0, C = 0} = groups;
+    if (person.group === 'A') {
+        return {...groups, A: A + 1};
+    } else if (person.group === 'B') {
+        return {...groups, B: B + 1};
+    } else {
+        return {...groups, C: C + 1};
+    }
+}, {});
+
+console.log(groupInfo); // {A: 3, C: 1, B: 2}
