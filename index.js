@@ -515,6 +515,39 @@ const groupInfo = people.reduce((groups, person) => {
     } else {
         return {...groups, C: C + 1};
     }
+
 }, {});
 
+
 console.log(groupInfo); // {A: 3, C: 1, B: 2}
+
+//FizzBuzz problem is a classic coding interview question that asks you to print numbers from 1 to N,
+but for multiples of 3, print "Fizz," for multiples of 5, print "Buzz," and for multiples of both 3 and 5, print "FizzBuzz."
+  Here's how you can solve the FizzBuzz problem in JavaScript:
+function fizzBuzz(n) {
+  for (let i = 1; i <= n; i++) {
+    if (i % 3 === 0 && i % 5 === 0) {
+      console.log("FizzBuzz");
+    } else if (i % 3 === 0) {
+      console.log("Fizz");
+    } else if (i % 5 === 0) {
+      console.log("Buzz");
+    } else {
+      console.log(i);
+    }
+  }
+}
+
+fizzBuzz(15);
+
+//To find the missing number in an array 
+const arrays = [1,2,3,4,6,7,8,9];
+
+const findTheNum = (a)=>{
+ let totalSum = a.reduce((acc,nums)=> acc + nums, 0);
+ let b = a.length + 1;
+ let c = b*(b+1) / 2;
+ return c - totalSum
+}
+console.log(findTheNum(arrays));
+
