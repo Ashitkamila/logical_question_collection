@@ -46,6 +46,18 @@ for (let val of array2) {
   }
 }
 console.log(uniqueNum);
+let array = [2,1,3,2,4,5,6,7,4,7,12];
+const findDuplicateNums = (a)=>{
+let filterNums = a.filter((val,ind)=>a.indexOf(val) === ind);
+let filterNums1 = [...new Set(a)];
+let reduceMethods = a.reduce((uni,items)=>{
+  return uni.includes(items) ? uni :[...uni,items]
+},[])
+return filterNums
+// return filterNums1
+// return reduceMethods
+}
+console.log(findDuplicateNums(array));
 
 //duplicate number
 
