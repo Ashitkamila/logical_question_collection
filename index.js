@@ -563,3 +563,161 @@ const findTheNum = (a)=>{
 }
 console.log(findTheNum(arrays));
 
+//Two sum problem in javscript
+const array = [1,2,3,4,12,14,5];
+
+const findSum = (input,output)=>{
+  let result = [];
+  for(let i = 0; i<input.length; i++){
+    for(let j = i + 1; j <input.length; j++){
+      if(input[i] + input[j] === output){
+        result.push(input[i])
+        result.push(input[j])
+      }
+    }
+  }
+  return result
+}
+console.log(findSum(array,9));
+--------------------------------------------------------all array of objects---------------------------------------------------------------------------
+//Object Property Frequency find out
+  const votes = [
+  { candidate: 'A' },
+  { candidate: 'B' },
+  { candidate: 'A' },
+  { candidate: 'C' },
+  { candidate: 'B' },
+];
+
+const voteCount = votes.reduce((count, vote) => {
+  count[vote.candidate] = (count[vote.candidate] || 0) + 1;
+  return count;
+}, {});
+
+console.log(voteCount);
+//Filtering and Mapping:
+const people = [
+  { name: 'Alice', age: 25 },
+  { name: 'Bob', age: 16 },
+  { name: 'Charlie', age: 20 },
+];
+
+const filteredNames = people.filter(person => person.age < 18).map(person => person.name);
+console.log(filteredNames); // Output: [ 'Bob' ]
+
+//Sorting Objects:
+
+const products = [
+  { name: 'Laptop', price: 800 },
+  { name: 'Phone', price: 500 },
+  { name: 'Tablet', price: 300 },
+];
+
+const sortedProducts = products.slice().sort((a, b) => a.price - b.price);
+console.log(sortedProducts);
+//Grouping Objects:
+const students = [
+  { name: 'Alice', grade: 'A' },
+  { name: 'Bob', grade: 'B' },
+  { name: 'Charlie', grade: 'A' },
+];
+
+const groupedStudents = students.reduce((result, student) => {
+  if (!result[student.grade]) {
+    result[student.grade] = [];
+  }
+  result[student.grade].push(student.name);
+  return result;
+}, {});
+
+console.log(groupedStudents);
+
+//Finding Maximum Value:
+const products = [
+  { name: 'Laptop', price: 800 },
+  { name: 'Phone', price: 500 },
+  { name: 'Tablet', price: 300 },
+];
+
+const maxPriceProduct = products.reduce((max, product) => (product.price > max.price ? product : max));
+console.log(maxPriceProduct);
+//Combining Arrays of Objects:
+const store1Products = [
+  { name: 'Laptop', price: 800 },
+  { name: 'Phone', price: 500 },
+];
+
+const store2Products = [
+  { name: 'Phone', price: 450 },
+  { name: 'Tablet', price: 300 },
+];
+
+const combinedProducts = [...store1Products, ...store2Products].reduce((uniqueProducts, product) => {
+  if (!uniqueProducts.some(p => p.name === product.name)) {
+    uniqueProducts.push(product);
+  }
+  return uniqueProducts;
+}, []);
+
+console.log(combinedProducts);
+
+//Calculating Object Property Sum:
+
+const expenses = [
+  { category: 'Food', amount: 50 },
+  { category: 'Transport', amount: 30 },
+  { category: 'Food', amount: 20 },
+];
+
+const expenseSumByCategory = expenses.reduce((sums, expense) => {
+  sums[expense.category] = (sums[expense.category] || 0) + expense.amount;
+  return sums;
+}, {});
+
+console.log(expenseSumByCategory);
+//Finding Common Property:
+
+const users1 = [
+  { name: 'Alice', email: 'alice@example.com' },
+  { name: 'Bob', email: 'bob@example.com' },
+];
+
+const users2 = [
+  { name: 'Charlie', email: 'charlie@example.com' },
+  { name: 'Bob', email: 'bob@example.com' },
+];
+
+const commonEmails = users1.map(user => user.email)
+  .filter(email => users2.some(user => user.email === email));
+
+console.log(commonEmails);
+//Replacing Object Property:
+
+const books = [
+  { title: 'Book 1', author: 'Author 1', year: 1990 },
+  { title: 'Book 2', author: 'Author 2', year: 2005 },
+];
+
+const currentYear = new Date().getFullYear();
+const updatedBooks = books.map(book => ({
+  ...book,
+  author: book.year < 2000 ? 'Anonymous' : book.author,
+}));
+
+console.log(updatedBooks);
+//Object Property Manipulation:
+const employees = [
+  { name: 'Alice', salary: 50000 },
+  { name: 'Bob', salary: 60000 },
+];
+
+const salaryIncreasePercentage = 10;
+const updatedEmployees = employees.map(employee => ({
+  ...employee,
+  salary: employee.salary * (1 + salaryIncreasePercentage / 100),
+}));
+
+console.log(updatedEmployees);
+
+
+
