@@ -718,6 +718,18 @@ const updatedEmployees = employees.map(employee => ({
 }));
 
 console.log(updatedEmployees);
+//Binary search of element in an array
 
+const array = [1,3,12,4,5,67,8,10];
+
+const findAnElements = (a,target)=>{
+  let findIndex = a.indexOf(target);
+  if(a.includes(target)){
+    return `element found of ${target} in ${findIndex}`
+  }else{
+    return `element not found ${target}`
+  }
+}
+console.log(findAnElements(array,121));
 
 
