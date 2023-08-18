@@ -732,4 +732,36 @@ const findAnElements = (a,target)=>{
 }
 console.log(findAnElements(array,121));
 
+// all array in singale array in an array of object------------------------------------------
 
+import "./styles.css";
+
+const objects = [
+  { name: "ashit", books: ["abc", "cde", "def"] },
+  { name: "anil", books: ["pqr", "cde", "rst"] },
+  { name: "sagar", books: ["abc", "cde", "xyz"] }
+];
+
+const accuAllBooks = (a) =>{
+ let allBooks = a.reduce((acc,arr)=>{
+   return acc.concat(arr.books)
+ },[])
+ return allBooks
+}
+console.log(accuAllBooks(objects));
+------------------------------------------------filter in an array of object ------------------------------------
+const objects = [
+  { name: "ashit", books: ["abc", "cde", "def"] },
+  { name: "anil", books: ["pqr", "cde", "rst"] },
+  { name: "sagar", books: ["abc", "cde", "xyz"] }
+];
+
+let findAllBooks = objects.reduce((acc,arr)=>{
+  return acc.concat(arr.books)
+},[])
+let filterOfAllDuplicate = findAllBooks.filter((val,ind,array)=>{
+  return array.indexOf(val) === ind;
+})
+let secondMethod = [... new Set(findAllBooks)];
+// console.log(filterOfAllDuplicate)
+console.log(secondMethod)
